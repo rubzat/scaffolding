@@ -1,4 +1,4 @@
-<?php namespace Raalveco\Scaffolding\Commands;
+<?php namespace Intagono\Scaffolding\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

@@ -26,7 +26,7 @@ In the $providers array add the following service provider for this package.
 // config/app.php
 
 'providers' => [
-    Raalveco\Scaffolding\ScaffoldingServiceProvider::class,
+    Intagono\Scaffolding\ScaffoldingServiceProvider::class,
 ];
 ```
 
@@ -38,7 +38,7 @@ If you want to create a simple catalog for an entity, you must enter the console
     php artisan make:scaffold Customer --fields="rfc:string:13[required|maxlength:13|minlength:12], first_name:string:100[required|alpha], last_name:string:100[required|alpha], email:string:100[required|email]"
 ```
 
-This will create the bass for a Book model structure, will be created the following files:
+This will create the bass for a Customer model structure, will be created the following files:
 
 ```txt
     Controller:

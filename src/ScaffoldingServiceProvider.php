@@ -1,7 +1,7 @@
-<?php namespace Raalveco\Scaffolding;
+<?php namespace Intagono\Scaffolding;
 
 use Illuminate\Support\ServiceProvider;
-use Raalveco\Scaffolding\Commands\ScaffoldCommand;
+use Intagono\Scaffolding\Commands\ScaffoldCommand;
 
 class ScaffoldingServiceProvider extends ServiceProvider {
 

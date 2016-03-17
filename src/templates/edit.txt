@@ -4,7 +4,7 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <a href="$PREFIX_URL$">{{ trans('custom.home') }}</a>
+            <a href="$PREFIX_URL$">{{ trans('administration.home') }}</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>

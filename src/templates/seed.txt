@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use \App\Models\$MODEL$;
+use \Illuminate\Support\Str;
+
+class $SEEDER_NAME$ extends Seeder {
+
+	public function run()
+	{
+		Model::unguard();
+
+		$times = 15;
+
+		for($i=0;$i<$times;$i++){
+		    $MODEL$::create(
+                array(
+                    $FIELDS_CREATE$
+                )
+            );
+		}
+	}
+
+}

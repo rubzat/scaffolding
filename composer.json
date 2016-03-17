@@ -1,0 +1,26 @@
+{
+    "name": "raalveco/scaffolding",
+    "description": "Scaffold Generator - Laravel 5 & Metronic Template",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Annalicia Ostos",
+            "email": "nanita.ostos@gmail.com",
+            "role": "Project Manager"
+        },
+        {
+            "name": "Ramiro Vera",
+            "email": "raalveco@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src",
+            "src/commands"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}

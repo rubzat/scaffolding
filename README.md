@@ -35,6 +35,10 @@ In the $providers array add the following service provider for this package.
 If you want to create a simple catalog for an entity, you must enter the console the following command:
 
 ```bash
+    php artisan make:scaffold Category --fields="name:string:100[required|alpha]"
+```
+
+```bash
     php artisan make:scaffold Customer --fields="rfc:string:13[required|maxlength:13|minlength:12], first_name:string:100[required|alpha], last_name:string:100[required|alpha], email:string:100[required|email]"
 ```
 

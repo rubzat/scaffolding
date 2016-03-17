@@ -383,9 +383,11 @@ class ScaffoldCommand extends Command {
         ';
         $validations_lang .= '"number" => "This field only accepts numeric values.",
         ';
-        $validations_lang .= '"minlength" => "the minimum length of the field is {0}.",
+        $validations_lang .= '"minlength" => "The minimum length of the field is {0}.",
         ';
-        $validations_lang .= '"maxlength" => "the maximum length of the field is {0}.",
+        $validations_lang .= '"maxlength" => "The maximum length of the field is {0}.",
+        ';
+        $validations_lang .= '"lettersonly" => "This field only accepts letters.",
         ';
 
         $validations_lang = trim($validations_lang);
@@ -505,6 +507,8 @@ class ScaffoldCommand extends Command {
         $validations_lang .= '"minlength" => "El tamaño mínimo del campo es {0}.",
         ';
         $validations_lang .= '"maxlength" => "El tamaño máximo del campo es {0}.",
+        ';
+        $validations_lang .= '"lettersonly" => "El campo solo acepta letras.",
         ';
         $validations_lang .= '"min" => "El valor mínimo del campo es {0}.",
         ';
@@ -722,6 +726,13 @@ class ScaffoldCommand extends Command {
                 email: "<?php echo trans("'.Str::lower($this->plural_name).'.validations.email") ?>",';
                     }
 
+                    if (isset($option[0]) && $option[0] == "alpha" && isset($option[1])) {
+                        $rules_tmp .= '
+                lettersonly: true,';
+                        $messages_tmp .= '
+                lettersonly: "<?php echo trans("' . Str::lower($this->plural_name) . '.validations.lettersonly") ?>",';
+                    }
+
                     if (isset($option[0]) && $option[0] == "maxlength" && isset($option[1])) {
                         $rules_tmp .= '
                 maxlength: ' . $option[1] . ',';
@@ -922,6 +933,13 @@ class ScaffoldCommand extends Command {
                 email: true,';
                         $messages_tmp .= '
                 email: "<?php echo trans("' . Str::lower($this->plural_name) . '.validations.email") ?>",';
+                    }
+
+                    if (isset($option[0]) && $option[0] == "alpha" && isset($option[1])) {
+                        $rules_tmp .= '
+                lettersonly: true,';
+                        $messages_tmp .= '
+                lettersonly: "<?php echo trans("' . Str::lower($this->plural_name) . '.validations.lettersonly") ?>",';
                     }
 
                     if (isset($option[0]) && $option[0] == "maxlength" && isset($option[1])) {

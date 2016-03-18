@@ -359,6 +359,16 @@ class ScaffoldCommand extends Command {
         ';
         $notifications_lang .= '"delete_successful" => "The '.Str::lower($this->model_name).' has been successfully deleted.",
         ';
+        $notifications_lang .= '"register_error" => "The '.Str::lower($this->model_name).' register has failed.",
+        ';
+        $notifications_lang .= '"update_error" => "The '.Str::lower($this->model_name).' update has failed.",
+        ';
+        $notifications_lang .= '"activated_error" => "The '.Str::lower($this->model_name).' activate/inactivate has failed.",
+        ';
+        $notifications_lang .= '"deactivated_error" => "The '.Str::lower($this->model_name).' has been successfully deactivated.",
+        ';
+        $notifications_lang .= '"delete_error" => "The '.Str::lower($this->model_name).' delete has failed.",
+        ';
         $notifications_lang .= '"already_register" => "The '.Str::lower($this->model_name).' had been registered previously.",
         ';
         $notifications_lang .= '"no_exists" => "The '.Str::lower($this->model_name).' does not exist.",
@@ -485,6 +495,16 @@ class ScaffoldCommand extends Command {
         $notifications_lang .= '"deactivated_successful" => "'.Str::title($gender).' '.Str::lower($this->singular).' ha sido desactivad'.$gro.' correctamente.",
         ';
         $notifications_lang .= '"delete_successful" => "'.Str::title($gender).' '.Str::lower($this->singular).' ha sido eliminad'.$gro.' correctamente.",
+        ';
+        $notifications_lang .= '"register_error" => "'.Str::title($gender).' '.Str::lower($this->singular).' NO ha sido registrad'.$gro.' correctamente.",
+        ';
+        $notifications_lang .= '"update_error" => "'.Str::title($gender).' '.Str::lower($this->singular).' NO ha sido modificad'.$gro.' correctamente.",
+        ';
+        $notifications_lang .= '"activated_error" => "'.Str::title($gender).' '.Str::lower($this->singular).' NO ha sido activad'.$gro.' correctamente.",
+        ';
+        $notifications_lang .= '"deactivated_error" => "'.Str::title($gender).' '.Str::lower($this->singular).' NO ha sido desactivad'.$gro.' correctamente.",
+        ';
+        $notifications_lang .= '"delete_error" => "'.Str::title($gender).' '.Str::lower($this->singular).' NO ha sido eliminad'.$gro.' correctamente.",
         ';
         $notifications_lang .= '"already_register" => "'.Str::title($gender).' '.Str::lower($this->singular).' ya había sido registrad'.$gro.' previamente.",
         ';

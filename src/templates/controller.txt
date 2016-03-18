@@ -20,6 +20,8 @@ class $CONTROLLER_NAME$ extends Controller {
 	}
 
 	public function store(Request $request){
+	    Session::flash('error', trans("$TABLE$.notifications.register_error"));
+
 	    $this->validate($request, $MODEL$::$rules);
 
 		$MODEL$::create($request->all());
@@ -42,6 +44,8 @@ class $CONTROLLER_NAME$ extends Controller {
 	}
 
 	public function update(Request $request){
+	    Session::flash('error', trans("$TABLE$.notifications.update_error"));
+
         $this->validate($request, $MODEL$::$rules);
 
         $$TABLE_SINGULAR$ = $MODEL$::find($request->id);

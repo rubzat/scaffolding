@@ -389,6 +389,12 @@ class ScaffoldCommand extends Command {
         ';
         $validations_lang .= '"lettersonly" => "This field only accepts letters.",
         ';
+        $validations_lang .= '"min" => "The minimum value of the field is {0}.",
+        ';
+        $validations_lang .= '"max" => "The maximum value of the field is {0}.",
+        ';
+        $validations_lang .= '"range" => "The field value must be between {0} - {1}.",
+        ';
 
         $validations_lang = trim($validations_lang);
 
@@ -680,7 +686,7 @@ class ScaffoldCommand extends Command {
                                 {{ trans("' . Str::lower($this->plural_name) . '.fields.' . Str::lower($field->name) . '") }} ' . $is_required . '
                             </label>
                             <div class="col-md-4">
-                                <input type="checkbox"{{old("' . Str::lower($field->name) . '") == 1 '." ? '".'checked="checked"'."'".' : ""}} name="'.Str::lower($field->name).'" class="make-switch" data-on-color="success" data-off-color="danger" data-on-text="{{ trans("' . Str::lower($this->plural_name) . '.buttons.yes") }}" data-off-text="{{ trans("' . Str::lower($this->plural_name) . '.buttons.no") }}" >
+                                <input type="checkbox"{{old("' . Str::lower($field->name) . '") == 0 '." ? '' : '".'checked="checked"'."'".'}} name="'.Str::lower($field->name).'" class="make-switch" data-on-color="success" data-off-color="danger" data-on-text="{{ trans("' . Str::lower($this->plural_name) . '.buttons.yes") }}" data-off-text="{{ trans("' . Str::lower($this->plural_name) . '.buttons.no") }}" >
                             </div>
                         </div>
                         ';

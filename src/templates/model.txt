@@ -10,4 +10,8 @@ class $NAME$ extends Model {
 		$RULES$
 	];
 
+	public static $messages = [
+		$RULE_MESSAGES$
+	];
+
 }

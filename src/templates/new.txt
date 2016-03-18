@@ -32,6 +32,21 @@
                 <form action="$PREFIX_URL$/$TABLE$/store" method="post" id="form_$TABLE$" class="form-horizontal" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-body">
+                        <!--Validacion-->
+                        <div class="alert alert-danger display-hide">
+                            <button class="close" data-close="alert"></button> {{ trans('administration.form_has_errors') }}
+                        </div>
+                        @if(count($errors) > 0)
+                            <div class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <!--Validacion-->
                         $FIELDS$
                     </div>
                     <div class="form-actions">

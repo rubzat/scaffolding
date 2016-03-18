@@ -20,9 +20,9 @@ class $CONTROLLER_NAME$ extends Controller {
 	}
 
 	public function store(Request $request){
-	    Session::flash('error', trans("$TABLE$.notifications.register_error"));
-
-	    $this->validate($request, $MODEL$::$rules);
+	    $request->session()->flash('error', trans("$TABLE$.notifications.update_error"));
+        $this->validate($request, $MODEL$::$rules, $MODEL$::$messages);
+        $request->session()->forget('error');
 
 		$MODEL$::create($request->all());
 
@@ -44,9 +44,9 @@ class $CONTROLLER_NAME$ extends Controller {
 	}
 
 	public function update(Request $request){
-	    Session::flash('error', trans("$TABLE$.notifications.update_error"));
-
-        $this->validate($request, $MODEL$::$rules);
+	    $request->session()->flash('error', trans("$TABLE$.notifications.update_error"));
+        $this->validate($request, $MODEL$::$rules, $MODEL$::$messages);
+        $request->session()->forget('error');
 
         $$TABLE_SINGULAR$ = $MODEL$::find($request->id);
 

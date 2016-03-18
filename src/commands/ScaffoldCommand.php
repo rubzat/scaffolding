@@ -218,17 +218,44 @@ class ScaffoldCommand extends Command {
 
     public function makeModel(){
         $rules = '';
+        $messages = '';
+
         if($this->fields) foreach($this->fields as $field){
             $rule = "";
             if(!empty($field->options)){
                 $rule = implode("|", $field->options);
                 $rules .= '"'.$field->name.'" => "'.$rule.'",
         ';
+
+                foreach($field->options as $option){
+                    $option = explode(":", $option);
+                    $index = $field->name.".".$option[0];
+
+                    if($option[0] == "required"){
+                        $messages .= "'".$index."' => 'El campo ".Str::title($field->name)." es obligatorio.',
+        ";
+                    }
+                    elseif($option[0] == "numeric"){
+                        $messages .= "'".$index."' => 'El campo ".Str::title($field->name)." debe ser un valor numérico.',
+        ";
+                    }
+                    elseif($option[0] == "alpha"){
+                        $messages .= "'".$index."' => 'El campo ".Str::title($field->name)." debe ser un valor alfanumérico.',
+        ";
+                    }
+                    else{
+                        $messages .= "'".$index."' => 'El campo ".Str::title($field->name)." contiene un error.',
+        ";
+                    }
+                }
             }
         }
+
         $rules = trim($rules);
+        $messages = trim($messages);
 
         $this->model_template = str_replace('$RULES$', $rules, $this->model_template);
+        $this->model_template = str_replace('$RULE_MESSAGES$', $messages, $this->model_template);
 
         $this->model_template = str_replace('$NAME$', Str::title($this->model_name), $this->model_template);
         $this->model_template = str_replace('$FIELDS$', $this->fillables, $this->model_template);

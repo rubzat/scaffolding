@@ -79,7 +79,7 @@ class ScaffoldCommand extends Command {
 
     public function saveFiles(){
         file_put_contents(base_path()."/database/migrations/".date("Y_m_d_His")."_create_".Str::lower($this->plural_name)."_table.php", $this->migration_template);
-        file_put_contents(base_path()."/database/seeds/".Str::title($this->plural_name)."Seeder.php", $this->seed_template);
+        file_put_contents(base_path()."/database/seeds/".Str::title($this->plural_name)."TableSeeder.php", $this->seed_template);
 
         if(!file_exists(app_path()."/Models")){
             mkdir(app_path()."/Models");
@@ -1096,7 +1096,7 @@ class ScaffoldCommand extends Command {
     }
 
     public function makeSeeder(){
-        $this->seed_template = str_replace('$SEEDER_NAME$', Str::title($this->plural_name)."Seeder", $this->seed_template);
+        $this->seed_template = str_replace('$SEEDER_NAME$', Str::title($this->plural_name)."TableSeeder", $this->seed_template);
 
         $fields_create = "";
         if($this->fields) foreach($this->fields as $field){

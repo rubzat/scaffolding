@@ -99,7 +99,7 @@ class ScaffoldCommand extends Command {
         file_put_contents(base_path()."/resources/lang/en/".Str::lower($this->plural_name).".php", $this->lang_template);
         file_put_contents(base_path()."/resources/lang/es/".Str::lower($this->plural_name).".php", $this->lang_es_template);
 
-        file_put_contents(app_path()."/Http/routes.php", $this->route_template, FILE_APPEND);
+        file_put_contents(app_path()."/routes/web.php", $this->route_template, FILE_APPEND);
 
         if(!file_exists(base_path()."/resources/views/".($this->views_prefix != "" ? str_replace(".","/", $this->views_prefix) : ""))){
             mkdir(base_path()."/resources/views/".($this->views_prefix != "" ? str_replace(".","/", $this->views_prefix) : ""));
@@ -1225,7 +1225,7 @@ class ScaffoldCommand extends Command {
         $routes_prefix = $this->ask('Prefijo que se utilizará en las rutas y urls: '," ");
         $routes_prefix = Str::lower($routes_prefix);
 
-        $layout = $this->ask('Layout con el que se crearan las vistas: ',"layout.base");
+        $layout = $this->ask('Layout con el que se crearan las vistas: ',"layouts.admin");
         $layout = Str::lower($layout);
 
         $views_prefix = $this->ask('Carpeta donde se guardaran las vistas: '," ");

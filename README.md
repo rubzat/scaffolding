@@ -1,5 +1,4 @@
-## Scaffolding - Laravel 5.2 & Metronic Admin Template
-
+## Scaffolding - Laravel 5.4 & Metronic Admin Template 4.7 
 Library that simplifies creating CRUD, with which we will create Controllers, Models, Views, Migrations, Seeds & Routes in seconds.
 
 ## Instalación
@@ -9,7 +8,7 @@ To install the package you need to add dependency on our composer.json at the ro
 ```js
 {
     "require": {
-        "raalveco/scaffolding": "dev-master"
+        "rubzat/scaffolding": "dev-master"
     }
 }
 ```
@@ -18,7 +17,7 @@ To install the package you need to add dependency on our composer.json at the ro
     composer update
 ```
 
-## Laravel 5.2
+## Laravel 5.4
 
 In the $providers array add the following service provider for this package.
 
@@ -26,7 +25,7 @@ In the $providers array add the following service provider for this package.
 // config/app.php
 
 'providers' => [
-    Intagono\Scaffolding\ScaffoldingServiceProvider::class,
+    rubzat\Scaffolding\ScaffoldingServiceProvider::class,
 ];
 ```
 
@@ -61,7 +60,7 @@ This will create the bass for a Customer model structure, will be created the fo
         resources/views/customers/new.blade.php
         resources/views/customers/edit.blade.php
     Routes:
-        app/Http/routes.php (Edited)
+        routes/web.php (Edited)
 ```
 
 After running the command: make:scaffold, we should run a migrate and if necessary run the seeder that just generated.

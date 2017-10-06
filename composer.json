@@ -1,17 +1,17 @@
 {
-    "name": "intagono/scaffolding",
-    "description": "Scaffold Generator - Laravel 5.2 & Metronic Template",
+    "name": "rubzat/scaffolding",
+    "description": "Scaffold Generator - Laravel 5.4 & Metronic Template 4.7",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Annalicia Ostos",
-            "email": "nanita.ostos@gmail.com",
+            "name": "Ramiro Vera",
+            "email": "raalveco@gmail.com",
             "role": "Project Manager"
         },
         {
-            "name": "Ramiro Vera",
-            "email": "raalveco@gmail.com",
+            "name": "Ruben Zatarain",
+            "email": "rubzat@gmail.com",
             "role": "Developer"
         }
     ],

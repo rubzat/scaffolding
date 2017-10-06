@@ -1,4 +1,4 @@
-<?php namespace Intagono\Scaffolding\Commands;
+<?php namespace Rubzat\Scaffolding\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

@@ -1,7 +1,7 @@
-<?php namespace Intagono\Scaffolding;
+<?php namespace Rubzat\Scaffolding;
 
 use Illuminate\Support\ServiceProvider;
-use Intagono\Scaffolding\Commands\ScaffoldCommand;
+use Rubzat\Scaffolding\Commands\ScaffoldCommand;
 
 class ScaffoldingServiceProvider extends ServiceProvider {
 

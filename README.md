@@ -8,7 +8,7 @@ To install the package you need to add dependency on our composer.json at the ro
 ```js
 {
     "require": {
-        "rubzat/scaffolding": "dev-master"
+        "Rubzat/scaffolding": "dev-master"
     }
 }
 ```

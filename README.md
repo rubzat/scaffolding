@@ -8,7 +8,7 @@ To install the package you need to add dependency on our composer.json at the ro
 ```js
 {
     "require": {
-        "Rubzat/scaffolding": "dev-master"
+        "rubzat/scaffolding": "dev-master"
     }
 }
 ```
@@ -25,7 +25,7 @@ In the $providers array add the following service provider for this package.
 // config/app.php
 
 'providers' => [
-    rubzat\Scaffolding\ScaffoldingServiceProvider::class,
+    Rubzat\Scaffolding\ScaffoldingServiceProvider::class,
 ];
 ```
 

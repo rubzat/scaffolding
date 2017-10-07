@@ -22,10 +22,11 @@ class ScaffoldingServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app['scaffolding.scaffold'] = $this->app->share(function($app)
-        {
+        
+       	$this->app->singleton('scaffolding.scaffold', function($app)
+		{
             return new ScaffoldCommand();
-        });
+		});
 
         $this->commands('scaffolding.scaffold');
 	}

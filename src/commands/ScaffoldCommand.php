@@ -99,7 +99,7 @@ class ScaffoldCommand extends Command {
         file_put_contents(base_path()."/resources/lang/en/".Str::lower($this->plural_name).".php", $this->lang_template);
         file_put_contents(base_path()."/resources/lang/es/".Str::lower($this->plural_name).".php", $this->lang_es_template);
 
-        file_put_contents(app_path()."/routes/web.php", $this->route_template, FILE_APPEND);
+        file_put_contents(base_path()."/routes/web.php", $this->route_template, FILE_APPEND);
 
         if(!file_exists(base_path()."/resources/views/".($this->views_prefix != "" ? str_replace(".","/", $this->views_prefix) : ""))){
             mkdir(base_path()."/resources/views/".($this->views_prefix != "" ? str_replace(".","/", $this->views_prefix) : ""));
@@ -581,10 +581,10 @@ class ScaffoldCommand extends Command {
 
     public function makeRoutes(){
         if($this->routes_prefix == ""){
-            $this->route_template = str_replace('$PARAMS$', '"middleware" => ["web"]' , $this->route_template);
+            $this->route_template = str_replace('$PARAMS$', $this->route_template);
         }
         else{
-            $this->route_template = str_replace('$PARAMS$', '"prefix" => "'.$this->routes_prefix.'", "middleware" => ["web"]', $this->route_template);
+            $this->route_template = str_replace('$PARAMS$', '"prefix" => '".$this->routes_prefix.'", $this->route_template);
         }
 
         $routes = 'Route::get("/'.Str::lower($this->plural_name).'", "'.Str::title($this->plural_name).'Controller@index");

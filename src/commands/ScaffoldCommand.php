@@ -584,7 +584,7 @@ class ScaffoldCommand extends Command {
             $this->route_template = str_replace('$PARAMS$', $this->route_template);
         }
         else{
-            $this->route_template = str_replace('$PARAMS$', '"prefix" => '".$this->routes_prefix.'", $this->route_template);
+            $this->route_template = str_replace('$PARAMS$', $this->routes_prefix , $this->route_template);
         }
 
         $routes = 'Route::get("/'.Str::lower($this->plural_name).'", "'.Str::title($this->plural_name).'Controller@index");

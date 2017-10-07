@@ -1,6 +1,11 @@
 
+//Sin Prefijos
+$ROUTES$
 
-Route::group([$PARAMS$], function()
-{
+
+//Con Prefijos
+Route::prefix('$PARAMS$')->group(function () {
     $ROUTES$
 });
+
+// Eliminar alguna si no la usara
